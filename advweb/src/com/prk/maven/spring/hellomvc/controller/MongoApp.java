@@ -18,6 +18,7 @@ public class MongoApp {
 	private Mongo mongo;
 
 	public static void main(String[] args) throws Exception {
+		System.out.println("MongoApp");
 		MongoApp app = new MongoApp();
 		app.mongo = new MongoClient("localhost");
 		app.mongoTest();
