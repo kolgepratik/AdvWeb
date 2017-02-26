@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Spring Themes. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Spring MVC ThemeResolver Example</title></head>
+<body layout:fragment="content">
+	<h3>Spring MVC ThemeResolver Example</h3>
+	
+	<div th:include="fragments/common :: alert-fragment (type='warning', message='This is a warning message.')"></div>
+	<div th:include="fragments/common :: alert-fragment (type='danger', message='This is an error message.')"></div>
+
+	<p>
+		Theme: <a href="?theme=default">default</a> | <a href="?theme=dark">dark</a>
+	</p>
+
+	<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".modal-test">Modal</button>
+	
+	<!-- Modals -->
+	<div id="simple-modal">
+		<div th:include="fragments/common :: basic-modal-fragment (title='Simple Modal', id='modal-test', contentLayout='views/themes', contentFragment='modal-test', actionsLayout='views/themes', actionsFragment='modal-actions-save-close')"></div>
+
+		<!-- Fragments -->
+		<div class="col-sm-12">
+			<div th:fragment="modal-test" class="hidden">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada porttitor ornare. Nunc elementum, erat nec lobortis suscipit, risus urna auctor ligula, et iaculis quam nulla ut libero. Proin eget efficitur lorem, sed pretium arcu. Fusce volutpat, metus rutrum varius malesuada, felis dolor auctor ex, id dignissim ipsum justo in nulla. Morbi laoreet consectetur nunc sed rutrum. Nunc eu tincidunt ante, ac ultricies lorem. Nullam varius orci vitae consequat pellentesque. Curabitur consequat tincidunt iaculis. Maecenas eu ultrices turpis. Morbi pretium sed nibh a feugiat. Sed vehicula, velit at dignissim dapibus, odio tortor dignissim ipsum, aliquam placerat ligula purus sit amet elit. Donec efficitur nisl sed eleifend pretium. Pellentesque nec interdum urna, at bibendum mi. Aliquam neque magna, aliquam et urna vel, vulputate porttitor nibh. Duis efficitur orci non tincidunt scelerisque.
+					Nullam sed elit nunc. Sed pellentesque egestas luctus. Donec non viverra arcu. Suspendisse a justo dui. Curabitur a enim vel mi ornare venenatis eu ut turpis. Curabitur vulputate quam odio, non euismod ipsum porta vel. Ut elit dui, facilisis sed nibh non, sodales auctor leo. Vestibulum sapien tortor, pulvinar ac tincidunt sed, tincidunt ut eros.
+					Donec nec nunc vitae mi fermentum egestas. Nulla bibendum, ante nec bibendum feugiat, massa orci suscipit erat, vitae tempor lectus magna quis metus. Fusce hendrerit imperdiet libero, sed pretium sem malesuada et. Sed vulputate, ligula vel ultrices dapibus, purus ante ultricies urna, facilisis egestas ex tortor ac turpis. Nunc ullamcorper dolor eget magna malesuada dignissim. Nam sodales diam et dolor finibus, id fringilla est placerat. Aliquam sed lobortis risus. Sed ut convallis magna, ut pharetra nisl. Curabitur maximus rutrum purus.
+				</p>
+			</div>
+			
+			<div th:fragment="modal-actions-save-close" class="hidden">
+				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-sm">Save changes</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

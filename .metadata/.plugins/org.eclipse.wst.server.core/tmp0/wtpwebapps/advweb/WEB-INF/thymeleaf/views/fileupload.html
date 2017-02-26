@@ -1,0 +1,14 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Multipart Files. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Upload a file please</title></head>
+<body layout:fragment="content">
+    <h1>Please upload a file</h1>
+    <form method="post" th:action="@{/handleMultipleFormUpload}" enctype="multipart/form-data">
+        <input type="text" name="name"/>
+        <input type="file" name="file"/>
+        <input type="file" name="file"/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>

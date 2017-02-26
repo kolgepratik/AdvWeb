@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Spring Themes. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Product List</title></head>
+<body layout:fragment="content">
+	<h3>New Product</h3>
+	
+	<div th:include="fragments/common :: alert-fragment (type='info', message='Fill in the information for new Product.')"></div>
+	
+	<form th:action="@{/save}" th:object="${product}" method="post">
+		<input type="text" th:field="*{name}" />
+		<input type="text" th:field="*{brand}" />
+		<input type="text" th:field="*{cost}" />
+		
+		<button class="btn btn-sm" type="submit">Save</button>
+	</form>
+</body>
+</html>

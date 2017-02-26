@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Spring Themes. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Product List</title></head>
+<body layout:fragment="content">
+	<h3>Showing All Products</h3>
+	
+	<div th:include="fragments/common :: alert-fragment (type='info', message='This list includes all Products.')"></div>
+
+	<!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".modal-test">Modal</button>  -->
+	
+	<div th:unless="${#lists.isEmpty(list)}">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th th:text="#{product.name}">Name</th>
+					<th th:text="#{product.brand}">Brand</th>
+					<th th:text="#{product.cost}">Cost</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${list}">
+					<td th:text="${{product.name}}"></td>
+					<td th:text="${{product.brand}}"></td>
+					<td th:text="${{product.cost}}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- Modals -->
+	<div id="simple-modal">
+		<div th:include="fragments/common :: basic-modal-fragment (title='Products', id='modal-test', contentLayout='views/productList', contentFragment='modal-test', actionsLayout='views/productList', actionsFragment='modal-actions-close')"></div>
+
+		<!-- Fragments -->
+		<div class="col-sm-12">
+			<div th:fragment="modal-test" class="hidden">
+				<p>
+					Welcome to list of products.
+				</p>
+			</div>
+			
+			<div th:fragment="modal-actions-close" class="hidden">
+				<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+	
+	<script th:src="@{resources/js/views/productList.js}"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+127.0.0.1 - - [26/Feb/2017:17:53:53 -0500] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [26/Feb/2017:17:57:52 -0500] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:21 -0500] "GET /advweb/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:22 -0500] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:29 -0500] "GET /advweb/add HTTP/1.1" 200 2687
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:29 -0500] "GET /advweb/resources/themes/default/css/bootstrap-custom.css HTTP/1.1" 200 199
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:29 -0500] "GET /advweb/resources/themes/default/css/bootstrap.min.css HTTP/1.1" 200 121200
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:29 -0500] "GET /advweb/resources/js/bootstrap/bootstrap.min.js HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:29 -0500] "GET /advweb/resources/js/jquery/jquery-3.1.1.min.js HTTP/1.1" 200 86709
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:30 -0500] "GET /advweb/resources/themes/default/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:40 -0500] "POST /advweb/save HTTP/1.1" 200 4019
+0:0:0:0:0:0:0:1 - - [26/Feb/2017:17:58:41 -0500] "GET /advweb/resources/js/views/productList.js HTTP/1.1" 200 71

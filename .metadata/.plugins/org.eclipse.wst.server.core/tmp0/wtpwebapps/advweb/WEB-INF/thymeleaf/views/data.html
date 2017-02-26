@@ -1,0 +1,10 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Thymeleaf Layouts. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Upload a file please</title></head>
+<body layout:fragment="content">
+	<h3 th:text="#{app.title}"></h3>
+	Current Date: <b th:text="${currentDate}"></b><br/>
+	<p th:text="#{app.msg}"></p>
+</body>
+</html>

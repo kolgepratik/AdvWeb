@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hellomvc&apos; to &apos;advweb&apos;" description="Rename resource &apos;hellomvc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/hellomvc" name="advweb" stamp="1488149850971" updateReferences="true"/>
+</session>

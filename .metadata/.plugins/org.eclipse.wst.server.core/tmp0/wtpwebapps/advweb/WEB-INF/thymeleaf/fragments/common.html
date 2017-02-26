@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div th:fragment="alert-fragment (type, message)">
+		<div role="alert" class="alert alert-dismissible" th:classappend="'alert-' + ${type}">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<span th:text="${message}"></span>
+		</div>
+	</div>
+	
+	<div th:fragment="basic-modal-fragment (title, id, contentLayout, contentFragment, actionsLayout, actionsFragment)">
+		<div class="modal fade" th:classappend="${id}" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" th:text="${title}"></h4>
+					</div>
+					
+					<div class="modal-body">
+						<div th:include="${contentLayout} :: ${contentFragment}"></div>
+					</div>
+					
+					<div class="modal-footer">
+						<div th:include="${actionsLayout} :: ${actionsFragment}"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
