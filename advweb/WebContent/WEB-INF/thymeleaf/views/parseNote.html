@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Spring Themes. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Product List</title></head>
+<body layout:fragment="content">
+	<h3>Parsed Note</h3>
+	
+	<div th:include="fragments/common :: alert-fragment (type='info', message='This is the parsed note.')"></div>
+
+	Current Date: <b th:text="${currentDate}"></b><br/>
+	
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+		var results = /*[[${results}]]*/;
+		alert(results);
+	/*]]>*/
+	</script>
+	
+	Results: <br/><span th:text="${results}" class="text-primary"></span>
+	
+	<script th:src="@{resources/js/views/productList.js}"></script>
+</body>
+</html>

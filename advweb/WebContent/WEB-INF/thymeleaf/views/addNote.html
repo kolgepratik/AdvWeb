@@ -1,0 +1,16 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- Basic page showing usage of Spring Themes. -->
+<html layout:decorate="~{layouts/base}">
+<head><title>Add Clinical Note</title></head>
+<body layout:fragment="content">
+	<h3>New Clinical Note</h3>
+	
+	<div th:include="fragments/common :: alert-fragment (type='info', message='Enter text you want to parse (max 10000 characters): ')"></div>
+	
+	<form th:action="@{/metamap/parseNote}" method="post">
+		<textarea rows="5" cols="80" name="noteText"></textarea>
+		
+		<button class="btn btn-sm" type="submit">Parse</button>
+	</form>
+</body>
+</html>

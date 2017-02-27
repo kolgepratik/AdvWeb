@@ -54,7 +54,7 @@ public class MMInteractiveUser {
 
 		// Optional field, program will run default MetaMap if not specified
 
-		myIntMMObj.setField("COMMAND_ARGS", "-iD");
+		myIntMMObj.setField("COMMAND_ARGS", "-iD --JSONf 2");
 
 		// Submit the job request
 
